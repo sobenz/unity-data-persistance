@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
-    public Brick BrickPrefab;
+    public GameObject[] brickPrefabs;
     public int LineCount = 6;
     public Rigidbody Ball;
 
@@ -32,7 +32,9 @@ public class MainManager : MonoBehaviour
             for (int x = 0; x < perLine; ++x)
             {
                 Vector3 position = new Vector3(-1.5f + step * x, 2.5f + i * 0.3f, 0);
-                var brick = Instantiate(BrickPrefab, position, Quaternion.identity);
+                var brickPrefab = brickPrefabs[Random.Range(0, brickPrefabs.Length)];
+                var brickObj = Instantiate(brickPrefab, position, Quaternion.identity);
+                var brick = brickObj.GetComponent<IBrick>();
                 brick.PointValue = pointCountArray[i];
                 brick.onDestroyed.AddListener(AddPoint);
             }

@@ -504,7 +504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d110623a642692246a42fbc2d8d89884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrickPrefab: {fileID: 897975713663390409, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
+  brickPrefabs:
+  - {fileID: 897975713663390406, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
+  - {fileID: 6710982869177948781, guid: 7ce348e4d2695b3489afd4a9dc6cc044, type: 3}
   LineCount: 6
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
